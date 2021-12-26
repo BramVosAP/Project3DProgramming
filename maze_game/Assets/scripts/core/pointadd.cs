@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class pointadd : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource ticksource;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-   
+    //var disabling render
+
     private void OnTriggerEnter(Collider collision)
     {
         scoremanager.instance.addpoint();
-        Destroy(gameObject);
-        
+        ticksource.Play();
+        GetComponent<Collider>().enabled = false;
+        GetComponent<Renderer>().enabled = false;
+
+
     }
+
 
 }
