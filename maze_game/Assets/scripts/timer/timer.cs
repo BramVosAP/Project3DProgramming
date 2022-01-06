@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
+    public static timer instance;
     float currentTime;
     public int startMinutes;
     public Text currentTimeTxt;
@@ -20,6 +21,14 @@ public class timer : MonoBehaviour
     {
         currentTime = startMinutes * 60;
     }
+
+    //instance
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -42,6 +51,11 @@ public class timer : MonoBehaviour
             death_canvas.enabled = true;
         }
         currentTimeTxt.text = currentTime.ToString();
+    }
+
+    public void addtime() {
+
+        currentTime = currentTime + 20;
     }
     
 }
