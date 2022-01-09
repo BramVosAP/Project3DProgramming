@@ -57,5 +57,6 @@ public class timer : MonoBehaviour
 
         currentTime = currentTime + 20;
     }
-    
+   
+
 }

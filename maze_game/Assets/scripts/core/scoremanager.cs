@@ -10,7 +10,7 @@ public class scoremanager : MonoBehaviour
 
     public Text scoretext;
 
-    int score = 0;
+    public int score = 0;
 
 
     private void Awake()
@@ -33,5 +33,10 @@ public class scoremanager : MonoBehaviour
     public void addpoint() {
         score += 1;
         scoretext.text = "points:" + score.ToString() + "/" + scoremax; 
+    }
+    public int returnpoints()
+    {
+
+        return score;
     }
 }
