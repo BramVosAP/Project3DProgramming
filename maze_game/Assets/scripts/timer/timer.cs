@@ -39,16 +39,7 @@ public class timer : MonoBehaviour
         }
         else
         {
-            //disable controles
-            (controler.GetComponent(scr) as MonoBehaviour).enabled = false;
-
-            //free curson
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-            //show death screen
-            curent_canvas.enabled = false;
-            death_canvas.enabled = true;
+            showdeadscreen();
         }
         currentTimeTxt.text = currentTime.ToString();
     }
@@ -57,6 +48,21 @@ public class timer : MonoBehaviour
 
         currentTime = currentTime + 20;
     }
-   
+
+
+    public void showdeadscreen() {
+
+        //disable controles
+        (controler.GetComponent(scr) as MonoBehaviour).enabled = false;
+
+        //free curson
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        //show death screen
+        curent_canvas.enabled = false;
+        death_canvas.enabled = true;
+
+    }
 
 }

@@ -23,6 +23,7 @@ public class addtime_upgrade : MonoBehaviour
         upgrade_text.text = "extra time added";
         Destroy(gameObject);
         timer.instance.addtime();
+        
 
 
 
